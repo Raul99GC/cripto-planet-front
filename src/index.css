@@ -2,7 +2,23 @@
 
 :root {
 
+  /* Primary Container Width */
+  --container-width-large: 82%;
+  /* For 1920px */
+  --container-width-medium: 90%;
+  /* For 768px */
+  --container-width-small: 92%;
+  /* For 640px */
+
   /* ------------- COLORS ------------- */
+  /* Default Light Theme (por defecto) */
+  --main-bg-color: #e6e9f2;
+  --main-text-color: #000000;
+
+  /* Primary Color */
+  --primary-color: var(--primary-color-600);
+  --button-bg-color: var(--primary-color-600);
+  --button-text-color: #ffffff;
 
   /* Main Color */
   --main-color-600: #0083f8;
@@ -59,17 +75,18 @@
   /* Dark Theme Colors */
   --dark-theme-main-color: #121318;
   --dark-theme-background: #080808;
-
-
-  /* ------------- Drop Shadow ------------- */
-
-  --shadow-none: 0px 0px 0px rgba(0, 0, 0, 0%);
-  --shadow-xs: 0px 4px 8px rgba(0, 0, 0, 8%);
-  --shadow-sm: 0px 6px 12px rgba(0, 0, 0, 11%);
-  --shadow-md: 0px 9px 18px rgba(0, 0, 0, 15%);
-  --shadow-lg: 0px 13px 37px rgba(0, 0, 0, 21%);
 }
 
+/* Dark Theme cuando el data-theme="dark" */
+[data-theme="dark"] {
+  --main-bg-color: #080808;
+  --main-text-color: #ffffff;
+
+  --primary-color: var(--dark-theme-main-color);
+
+  --button-bg-color: var(--dark-theme-main-color);
+  --button-text-color: #ffffff;
+}
 
 
 
@@ -96,6 +113,9 @@ body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   letter-spacing: .2rem;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 ul {
